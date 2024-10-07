@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantau Paru</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/bootstrap/css/bootstrap.min.css') }}">
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/slick-carousel/slick/slick.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/slick-carousel/slick/slick-theme.css') }}">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body id="top">
+
+<header>
+  <nav class="navbar navbar-expand-lg navigation" id="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="img-fluid">
+      </a>
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain" aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="icofont-navigation-menu"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarmain">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a class="nav-link" href="">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="">Tentang</a></li>
+          <li class="nav-item"><a class="nav-link" href="">Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<section class="section appoinment">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 ">
+                <div class="appoinment-content">
+                    <img src="{{ url_for('static', filename='images/decisiontree.png') }}" alt="" class="img-fluid">
+                    <img src="{{ url_for('static', filename='images/hasiltree.png') }}" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-10 ">
+                <div class="appoinment-wrap mt-5 mt-lg-0">
+                    <h2 class="mb-2 title-color">Decision Tree Classification</h2>
+                    <form id="patient-form" class="appoinment-form" method="post" action="#">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input name="patient_id" type="text" class="form-control" placeholder="Patient ID" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input name="age" type="number" class="form-control" placeholder="Age" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <select name="gender" class="form-control" required>
+                                        <option value="">Select Gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input name="air_pollution" type="text" class="form-control" placeholder="Air Pollution" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input name="alcohol_use" type="text" class="form-control" placeholder="Alcohol Use" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input name="dust_allergy" type="text" class="form-control" placeholder="Dust Allergy" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input name="occupational_hazards" type="text" class="form-control" placeholder="Occupational Hazards" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input name="genetic_risk" type="text" class="form-control" placeholder="Genetic Risk" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input name="chronic_lung_disease" type="text" class="form-control" placeholder="Chronic Lung Disease" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input name="balanced_diet" type="text" class="form-control" placeholder="Balanced Diet" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input name="obesity" type="text" class="form-control" placeholder="Obesity" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input name="smoking" type="text" class="form-control" placeholder="Smoking" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input name="passive_smoker" type="text" class="form-control" placeholder="Passive Smoker" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input name="chest_pain" type="text" class="form-control" placeholder="Chest Pain" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input name="coughing_of_blood" type="text" class="form-control" placeholder="Coughing of Blood" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input name="fatigue" type="text" class="form-control" placeholder="Fatigue" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input name="weight_loss" type="text" class="form-control" placeholder="Weight Loss" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input name="shortness_of_breath" type="text" class="form-control" placeholder="Shortness of Breath" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input name="wheezing" type="text" class="form-control" placeholder="Wheezing" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input name="swallowing_difficulty" type="text" class="form-control" placeholder="Swallowing Difficulty" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input name="clubbing_of_finger_nails" type="text" class="form-control" placeholder="Clubbing of Finger Nails" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input name="frequent_cold" type="text" class="form-control" placeholder="Frequent Cold" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input name="dry_cough" type="text" class="form-control" placeholder="Dry Cough" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input name="snoring" type="text" class="form-control" placeholder="Snoring" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-main btn-round-full">Klasifikasikan <i class="icofont-simple-right ml-2"></i></button>
+                    </form>
+
+                    {% if result %}
+                        <h2 class="mt-4">Hasil Klasifikasi:</h2>
+                        <div class="alert alert-info">{{ result }}</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer section bg-white text-dark">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-md-6">
+				<h5>Tentang Kami</h5>
+				<p>Kami adalah penyedia layanan kesehatan yang berkomitmen untuk memberikan informasi dan perawatan terbaik bagi pasien kami.</p>
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<h5>Kontak</h5>
+				<ul class="list-unstyled">
+					<li><a href="#">Email: support@example.com</a></li>
+					<li><a href="#">Tel: +1 234 567 890</a></li>
+				</ul>
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<h5>Ikuti Kami</h5>
+				<ul class="social-icons list-unstyled">
+					<li><a href="#"><i class="icofont-facebook"></i></a></li>
+					<li><a href="#"><i class="icofont-twitter"></i></a></li>
+					<li><a href="#"><i class="icofont-instagram"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<!-- Scripts -->
+<script src="{{ url_for('static', filename='plugins/jquery/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/slick-carousel/slick/slick.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="description" content="Orbitor,business,company,agency,modern,bootstrap4,tech,software">
+  <meta name="author" content="themefisher.com">
+
+  <title>Pantau Paru</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='plugins/bootstrap/css/bootstrap.min.css') }}">
+  <!-- Slick Slider CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='plugins/slick-carousel/slick/slick.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='plugins/slick-carousel/slick/slick-theme.css') }}">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+  <!-- Custom CSS to make table responsive -->
+  <style>
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    table {
+        table-layout: auto;
+        width: 100%;
+        font-size: 0.85rem; /* Adjust font size if needed */
+    }
+
+    th, td {
+        text-align: center;
+        padding: 8px;
+        word-wrap: break-word;
+    }
+
+    th:nth-child(1), td:nth-child(1) { /* First column (Patient Id) */
+        width: 10%;
+    }
+
+    th:nth-child(2), td:nth-child(2) { /* Second column (Level) */
+        width: 10%;
+    }
+
+    /* Add minimum width for other columns if necessary */
+    th, td {
+        min-width: 100px; /* Ensures readability */
+    }
+  </style>
+</head>
+
+<body id="top">
+
+<header>
+  <nav class="navbar navbar-expand-lg navigation" id="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="img-fluid">
+      </a>
+
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain" aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="icofont-navigation-menu"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarmain">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="">Beranda</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="">Tentang</a></li>
+          <li class="nav-item"><a class="nav-link" href="">Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="container">
+    <h1 class="mt-5">Preprocessed Data Results</h1>
+    
+    <!-- Display the table passed from the Python code -->
+    <div class="table-responsive mt-3">
+        {{ table_html|safe }}
+    </div>
+    
+</div>
+
+<!-- Footer -->
+<footer class="footer section bg-white text-dark">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-md-6">
+				<h5>Tentang Kami</h5>
+				<p>Kami adalah penyedia layanan kesehatan yang berkomitmen untuk memberikan informasi dan perawatan terbaik bagi pasien kami.</p>
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<h5>Kontak</h5>
+				<ul class="list-unstyled">
+					<li><a href="#">Email: support@example.com</a></li>
+					<li><a href="#">Tel: +1 234 567 890</a></li>
+				</ul>
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<h5>Ikuti Kami</h5>
+				<ul class="social-icons list-unstyled">
+					<li><a href="#"><i class="icofont-facebook"></i></a></li>
+					<li><a href="#"><i class="icofont-twitter"></i></a></li>
+					<li><a href="#"><i class="icofont-instagram"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<!-- Scripts -->
+<script src="{{ url_for('static', filename='plugins/jquery/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/slick-carousel/slick/slick.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
