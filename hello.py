@@ -2,7 +2,6 @@ from flask import Flask, render_template, request
 import joblib
 import pandas as pd
 import numpy as np # type: ignore
-from sklearn.preprocessing import MinMaxScaler # type: ignore
 import os
 
 app = Flask(__name__)
@@ -90,9 +89,7 @@ def determine_risk_level(inputs):
     else:
         return 'High'
 
-# Route for data preprocessing and display
-@app.route('/preprocessing')
-def preprocessing():
+
     # Load the dataset
     current_directory = os.path.dirname(os.path.abspath(__file__))
     
